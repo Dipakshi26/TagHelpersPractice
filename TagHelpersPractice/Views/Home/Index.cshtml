@@ -1,0 +1,27 @@
+﻿@model List<TagHelpersPractice.Models.Student>
+@{
+    ViewBag.Title = "Student List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.Name</td>
+                    <td class="text-center"><a href="/home/details/@student.StudentId">View</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
